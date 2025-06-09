@@ -414,6 +414,10 @@ class FieldSchema:
         self.element_type = kwargs.get("element_type")
         if "mmap_enabled" in kwargs:
             self._type_params["mmap_enabled"] = kwargs["mmap_enabled"]
+        if "enable_ngram_index" in kwargs:
+            self._type_params["min_gram"] = kwargs["min_gram"]
+            self._type_params["max_gram"] = kwargs["max_gram"]
+
         self._parse_type_params()
         self.is_function_output = False
 
